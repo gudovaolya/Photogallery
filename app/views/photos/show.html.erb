@@ -1,12 +1,25 @@
 <div class="container">
   <h1><%= @photo.title %></h1> 
   <p class="author">Фото загружено пользователем: <%= @photo.user.name %></p>
-  <div class="original-photo">
-    <div class="photo">
-      <%= image_tag @photo.image.url(:original) %>
-     </div>     
+  <div class="photo-block">
+    <div class="original-photo">
+      <div class="photo">
+        <%= image_tag @photo.image.url(:original) %>
+       </div>
+        <p>Средняя оценка: <b><%=  @average_photo %></b></p>     
+    </div>
+    <div class="add-comment">
+       <%= render 'photocomments/form' %>  
+    </div>   
+    <div class="photo_comments">
+      <h3>Комментарии:</h3>
+      <% @photocomments.each do |item| %>
+      <div class="comment-item">        
+        <p><span class="score">Оценка: <b><%= item.score %></b></span><br>
+        <%= item.content %></p>
+        <p class="author">Автор комментария: <strong><%= item.user.name %></strong></p>    
+      </div>
+      <% end %>
+    </div> 
   </div>
-  <div class="photo_comments">
-    <h3>Комментарии:</h3>
-  </div>  
 </div>

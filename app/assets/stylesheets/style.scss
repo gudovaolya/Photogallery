@@ -64,8 +64,13 @@ body{
   }
 }
 
+.photo-block{
+  width: 600px;
+  margin: 0 auto;
+}
+
 .original-photo{
-  width: 800px;
+  width: 100%;
   margin: 20px auto;
   .photo{
     margin: 0 0 20px;
@@ -77,5 +82,36 @@ body{
   }  
   .author{
     font-size: 15px;
+  }
+}
+
+.add-comment .form-block textarea{
+  height: 50px;
+}
+.add-comment .form-block input.txt-field{
+  width: 100px;
+  text-align: center;  
+  margin-right: 30px;
+  display: inline-block;
+  float: none;
+}
+
+.photo_comments{  
+  margin: 0 auto 50px;
+  .comment-item{
+    padding: 20px 0;
+    margin: 0 0 20px;
+    border-bottom: 1px dotted #ccc;
+    .author{
+        text-align: right;
+        font-style: italic;
+        strong{
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
+    .score{
+      font-size: 18px;
+    }
   }
 }

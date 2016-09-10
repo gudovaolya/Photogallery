@@ -7,4 +7,5 @@ class Photo < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   validates :image, presence: true
+  validates :title, presence: true, length: {maximum: 150}
 end
