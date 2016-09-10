@@ -13,9 +13,11 @@
         <div class="photo-title">
           <p>
             <%= photo_item.title %>
-            <span class="al-right"> 
-              <%= link_to "Комментировать", photo_path(photo_item) %>
-            </span>
+            <% if  user_signed_in? %>
+              <span class="al-right"> 
+                <%= link_to "Комментировать", photo_path(photo_item) %>
+              </span>
+            <% end %>
           </p>       
         </div>        
         <% if current_user == @user %>    

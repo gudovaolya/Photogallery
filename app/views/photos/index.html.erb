@@ -6,7 +6,9 @@
     <div class="photo-item">
       <div class="photo">
         <%= image_tag photo_item.image.url(:medium) %>
-        <div><%= link_to "Смотреть фото", photo_path(photo_item) %></div>
+        <% if  user_signed_in? %>
+          <div><%= link_to "Смотреть фото", photo_path(photo_item) %></div>
+        <% end %>       
       </div>
       <div class="photo-title">
         <h4><%= photo_item.title %></h4> 
