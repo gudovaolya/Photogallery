@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>All photos</h1>  
+  <div class="content">
+    <div class="photo-list">
+    <% @photos.each do |photo_item| %>
+    <div class="photo-item">
+      <div class="photo">
+        <%= image_tag photo_item.image.url(:medium) %>
+        <div><%= link_to "Смотреть фото", photo_path(photo_item) %></div>
+      </div>
+      <div class="photo-title">
+        <h4><%= photo_item.title %></h4> 
+        <span class="author"><%= link_to photo_item.user.name, profile_path(photo_item.user)%></span>       
+      </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>

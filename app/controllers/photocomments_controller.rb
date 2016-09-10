@@ -1,0 +1,2 @@
+class PhotocommentsController < ApplicationController
+end
