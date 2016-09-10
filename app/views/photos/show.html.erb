@@ -1,12 +1,12 @@
 <div class="container">
-  <h1><%= @photo.title %></h1> 
-  <p class="author">Фото загружено пользователем: <%= @photo.user.name %></p>
+  <h1 class="al-center"><%= @photo.title %></h1> 
+  <p class="author al-center">Фото загружено пользователем: <%= @photo.user.name %></p>
   <div class="photo-block">
     <div class="original-photo">
       <div class="photo">
-        <%= image_tag @photo.image.url(:original) %>
+        <%= image_tag @photo.image.url(:original) %>       
        </div>
-        <p>Средняя оценка: <b><%=  @average_photo %></b></p>     
+       <p>Средняя оценка: <b><%=  @average_photo %></b></p>     
     </div>
     <div class="add-comment">
        <%= render 'photocomments/form' %>  

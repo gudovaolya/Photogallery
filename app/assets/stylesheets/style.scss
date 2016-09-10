@@ -1,6 +1,13 @@
 body{
   padding-top: 50px;
 }
+.al-center{
+  text-align: center;
+}
+.al-right{
+  text-align: right;
+  display: block;
+}
 .navbar{
   background: #ccc;
 }
@@ -35,6 +42,8 @@ body{
     display: inline-block;
     border-radius: 5px;
     margin: 0 20px 20px 0;
+    vertical-align: top;
+    min-height: 250px;
     .photo{
       width: 170px;
       border-radius: 5px;
@@ -67,6 +76,17 @@ body{
 .photo-block{
   width: 600px;
   margin: 0 auto;
+}
+
+.photo-block.profile{
+  .photo-item{
+    padding: 0 0 20px;
+    margin: 0 0 10px;
+    border-bottom: 1px dotted #ccc;
+    .photo{
+      margin: 0 0 8px;
+    }
+  }
 }
 
 .original-photo{

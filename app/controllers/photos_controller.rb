@@ -24,7 +24,7 @@ class PhotosController < ApplicationController
   def show
      @photo = Photo.find(params[:id])
      @photocomments = Photocomment.where(photo_id: @photo.id)   
-     @average_photo = Photocomment.average(:score)
+     @average_photo = @photocomments.average(:score)
   end   
 
   private

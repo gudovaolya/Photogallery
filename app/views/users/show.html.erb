@@ -1,24 +1,33 @@
 <div class="container">
   <h1><%= @user.name %></h1> 
   <% if current_user == @user %>  
-    <p class="btn-block"><%= link_to 'Загрузить фото', new_photo_path,  class: "btn  btn-primary" %></p>
+  <p class="btn-block"><%= link_to 'Загрузить фото', new_photo_path,  class: "btn  btn-primary" %></p>
   <% end %> 
   <div class="content">
+    <div class="photo-block profile">
     <% @photos.each do |photo_item| %>
-    <div class="photo-item">
-      <div class="photo">
-        <%= image_tag photo_item.image.url(:large) %>
-      </div>
-      <div class="photo-title">
-        <p><%= photo_item.title %></p>        
-      </div>
-      <% if current_user == @user %>    
+      <div class="photo-item">
+        <div class="photo">
+          <%= image_tag photo_item.image.url(:large) %>
+        </div>
+        <div class="photo-title">
+          <p>
+            <%= photo_item.title %>
+            <span class="al-right"> 
+              <%= link_to "Комментировать", photo_path(photo_item) %>
+            </span>
+          </p>       
+        </div>        
+        <% if current_user == @user %>    
         <p class="al-right"><%= link_to "Удалить фото", photo_path(photo_item), method: :delete, 
           data: {confirm: "Вы действительно хотите удалить это фото?"},
           class: "btn  btn-danger"
         %></p>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
     <% end %>
+    </div>
   </div>
 </div>
+
+  
